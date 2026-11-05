@@ -77,3 +77,18 @@ def test_dictionary():
     assert dictionary_for_string_keys['sape'] == 4139
     assert dictionary_for_string_keys['guido'] == 4127
     assert dictionary_for_string_keys['jack'] == 4098
+    
+def test_dictionary_add_and_update():
+    """Test adding and updating dictionary values."""
+    student = {
+        'name': 'John',
+        'age': 20
+    }
+
+    # Add a new key
+    student['major'] = 'Computer Science'
+    assert student['major'] == 'Computer Science'
+
+    # Update an existing value
+    student['age'] = 21
+    assert student['age'] == 21
