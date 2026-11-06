@@ -357,3 +357,25 @@ def test_list_sorting():
     # list.sort() modifies the list itself.
     numbers.sort()
     assert numbers == [1, 2, 5, 7, 9]
+
+
+def test_list_filtering_and_slicing():
+    """Filtering with list comprehensions and slicing
+
+    List comprehensions can filter and transform items in one expression.
+    Slicing uses list[start:stop:step] to extract parts of a list.
+    """
+    numbers = list(range(10))
+
+    # Filtering with a list comprehension.
+    evens = [number for number in numbers if number % 2 == 0]
+    assert evens == [0, 2, 4, 6, 8]
+
+    # Filtering and transforming at the same time.
+    assert [number * number for number in numbers if number > 6] == [49, 64, 81]
+
+    # Slicing.
+    assert numbers[2:5] == [2, 3, 4]
+    assert numbers[::3] == [0, 3, 6, 9]
+    assert numbers[-3:] == [7, 8, 9]
+    assert numbers[::-1][:3] == [9, 8, 7]
