@@ -26,3 +26,22 @@ def test_if_statement():
         conclusion = 'Number bigger than or equal to one'
 
     assert conclusion == 'Number bigger than or equal to one'
+
+def test_grade_classification():
+    """Test grade classification using multiple elif conditions."""
+
+    grade = 85
+    result = ""
+
+    if grade >= 90:
+        result = "A"
+    elif grade >= 80:
+        result = "B"
+    elif grade >= 70:
+        result = "C"
+    elif grade >= 60:
+        result = "D"
+    else:
+        result = "F"
+    assert result == "B"
+    
