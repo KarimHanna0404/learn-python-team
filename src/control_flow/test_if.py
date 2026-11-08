@@ -44,4 +44,22 @@ def test_grade_classification():
     else:
         result = "F"
     assert result == "B"
+
+
+def test_nested_conditions():
+    """Test nested if statements."""
+
+    age = 20
+    completed_prerequisite = True
+    result = ""
+
+    if age >= 18:
+        if completed_prerequisite:
+            result = "Eligible"
+        else:
+            result = "Prerequisite required"
+    else:
+        result = "Not eligible due to age"
+
+    assert result == "Eligible"    
     
