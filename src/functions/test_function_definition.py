@@ -121,3 +121,15 @@ def test_function_definition():
     greet_with_closure = compose_greet_func_with_closure('John')
 
     assert greet_with_closure() == 'Hello there, John!'
+
+
+    # Example: Function with input validation.
+
+    def calculate_square(number):
+        if not isinstance(number, (int, float)) or isinstance(number, bool):
+            return None
+        return number * number
+
+    assert calculate_square(5) == 25
+    assert calculate_square(2.5) == 6.25
+    assert calculate_square("hello") is None
