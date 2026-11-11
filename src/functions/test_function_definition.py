@@ -123,7 +123,7 @@ def test_function_definition():
     assert greet_with_closure() == 'Hello there, John!'
 
 
-    # Example: Function with input validation.
+    # Example 1: Function with input validation.
 
     def calculate_square(number):
         if not isinstance(number, (int, float)) or isinstance(number, bool):
@@ -133,3 +133,15 @@ def test_function_definition():
     assert calculate_square(5) == 25
     assert calculate_square(2.5) == 6.25
     assert calculate_square("hello") is None
+
+
+        # Example 2: Function with multiple return values.
+
+    def find_min_max(numbers):
+        minimum = min(numbers)
+        maximum = max(numbers)
+        return minimum, maximum
+
+    assert find_min_max([3, 1, 7, 2]) == (1, 7)
+    assert find_min_max([10, 20, 5]) == (5, 20)
+    assert find_min_max([-4, -2, -9]) == (-9, -2)
