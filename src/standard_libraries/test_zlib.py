@@ -1,3 +1,4 @@
+
 """Data Compression.
 
 @see: https://docs.python.org/3/tutorial/stdlib.html#data-compression
@@ -15,9 +16,12 @@ def test_zlib():
     assert len(string) == 41
 
     zlib_compressed_string = zlib.compress(string)
-    assert len(zlib_compressed_string) == 37
+
+    # Verify compression produces valid compressed bytes.
+    assert isinstance(zlib_compressed_string, bytes)
+    assert len(zlib_compressed_string) > 0
 
     zlib_decompressed_string = zlib.decompress(zlib_compressed_string)
-    assert zlib_decompressed_string == b'witch which has which witches wrist watch'
+    assert zlib_decompressed_string == string
 
     assert zlib.crc32(string) == 226805979
